@@ -1,9 +1,10 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
-const questions = [
-  {
+
+
+const questions = [{
     type: 'input',
     name: 'title',
     message: 'What is the title of your project?',
@@ -11,33 +12,33 @@ const questions = [
   {
     type: 'input',
     name: 'description',
-    message: 'Provide a short description of your project:',
+    message: 'Provide a description of your project:',
   },
   {
     type: 'input',
     name: 'installation',
-    message: 'How do you install your project?',
+    message: 'What are the installation instructions?',
   },
   {
     type: 'input',
     name: 'usage',
-    message: 'How do you use your project?',
+    message: 'Provide usage information:',
   },
   {
     type: 'list',
     name: 'license',
-    message: 'Select a license:',
+    message: 'Choose a license for your project:',
     choices: ['MIT', 'GPLv3', 'Apache 2.0', 'None'],
   },
   {
     type: 'input',
     name: 'contributing',
-    message: 'How can others contribute?',
+    message: 'Provide contribution guidelines:',
   },
   {
     type: 'input',
     name: 'tests',
-    message: 'How do you run tests?',
+    message: 'Provide test instructions:',
   },
   {
     type: 'input',
@@ -47,20 +48,19 @@ const questions = [
   {
     type: 'input',
     name: 'email',
-    message: 'Enter your email for questions:',
-  },
-];
+    message: 'Enter your email address:',
+  },];
 
-function writeToFile(fileName, data) {
-  fs.writeFileSync(fileName, data);
-  console.log('README.md has been generated!');
-}
 
-function init() {
-  inquirer.prompt(questions).then((answers) => {
+function writeToFile(fileName, data) {fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('README.md generated successfully!')
+  );}
+
+
+function init() { inquirer.prompt(questions).then((answers) => {
     const markdown = generateMarkdown(answers);
     writeToFile('README.md', markdown);
-  });
-}
+  });}
+
 
 init();
