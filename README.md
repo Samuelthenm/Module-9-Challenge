@@ -1,9 +1,9 @@
-# Module-9Challenge
+# Module 9 Challenge
   
     ![License](https://img.shields.io/badge/license-MIT-blue.svg)
   
   ## Description
-  Readme generator
+  readme generator
   
   ## Table of Contents
   - [Installation](#installation)
@@ -14,19 +14,19 @@
   - [Questions](#questions)
   
   ## Installation
-  Installation
+  not sure
   
   ## Usage
-  not at the moment
+  later
   
   ## License
   This project is licensed under the MIT license.
   
   ## Contributing
-  no clue
+  later
   
   ## Tests
-  no clue
+  its just an example
   
   ## Questions
   If you have any questions, feel free to reach out:
@@ -35,5 +35,4 @@
   - Email: samuelthenm@gmail.com
   
   
-  this image shows how it looks
-![alt text](image/Screenshot%202025-03-26%20230006.png)
+  
